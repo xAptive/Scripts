@@ -6,8 +6,12 @@
 # who know your email address on other services.
 #
 # Example Usage:
+#
 # > ./email_gen Twitter
 # Twitter : myname+c90e4a29@pm.me
+#
+# > ./email_gen Facebook
+# Facebook : myname+bfba510b@pm.me
 
 EMAIL_ID=myname
 EMAIL_DOMAIN=pm.me
@@ -37,7 +41,7 @@ echo $EMAIL_RESULT | xclip -selection clipboard
 # Display email address for the user and log it
 echo  "$1 : $EMAIL_RESULT" | tee -a $LOG_FILE
 
-# Filter out duplicate in the log
+# Filter out duplicates in the log
 TMP_FILE=$(mktemp)
 sort -u -t':' -k2 $LOG_FILE > $TMP_FILE
 mv $TMP_FILE $LOG_FILE
