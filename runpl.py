@@ -28,7 +28,7 @@ def make_bpm_map(files):
 
 # Set the album name and track number in the id3 metadata
 def set_id3(f, album, track, track_count):
-    subprocess.run(['id3v2', '--TALB', album, '--TRCK', f"{track}/{track_count}", f])
+     28     subprocess.run(['id3v2', '--TALB', album, '--TRCK', f"{track}/{track_count}", '--TPE2', 'Various Artists', f])
 
 # Rename the file based on it's id3 information
 def name_file(f):
