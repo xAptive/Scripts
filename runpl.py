@@ -8,6 +8,9 @@
 #
 # This script uses the bpm-tag, id3v2, and id3ren Linux commandline utilities
 # to do the heavy lifting.  It doesn't do any exception handling.
+#
+# WARNING: This script modifies the files directly, and may result in lost
+# metadata.
 
 import subprocess
 import sys
