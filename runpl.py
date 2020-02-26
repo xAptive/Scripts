@@ -21,7 +21,7 @@ def make_bpm_map(files):
     results = dict()
     for f in files:
         result = subprocess.run(['bpm-tag', f], capture_output=True)
-        matches = re.finditer(', (\d+\.\d+) BPM', str(result.stderr))
+        matches = re.finditer(', (\d+[\.]?\d*) BPM', str(result.stderr))
         for match in matches:
             results[f] = float(match.group(1))
     return results
